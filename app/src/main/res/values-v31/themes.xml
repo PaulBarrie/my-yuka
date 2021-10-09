@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AndroidTest" parent="BaseTheme">      <!-- Point 3-->
+        <!-- Point 3 Background -->
+        <item name="android:windowSplashScreenBackground">@color/main_navigation_bg</item>
+
+        <!-- Point 2 Background Icon-->
+        <item name="android:windowSplashScreenIconBackgroundColor">@color/icon_selected</item>
+        <!-- Point 1 Icon -->
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
+        <!-- Point 4
+        <item name="android:windowSplashScreenBrandingImage"> @drawable/ic_nav_bar_cart</item> -->
+    </style>
+</resources>
