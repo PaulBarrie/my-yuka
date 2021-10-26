@@ -1,5 +1,8 @@
 package com.barrie.myyuka.model
 
+import java.security.InvalidKeyException
+import java.security.InvalidParameterException
+
 
 data class Product(val name : String, val brand : String, val barcode: String, val nutriscore : String,
                    val url_image : String, val quantity : String, val sale_country : List<String>,
@@ -35,8 +38,17 @@ data class Product(val name : String, val brand : String, val barcode: String, v
         }
         return "Additifs: ${this.additives.joinToString(", ")}"
     }
-
-
+    @Throws(InvalidParameterException::class)
+    fun getNutriscoreImage() : String  {
+        return when (this.nutriscore) {
+            "A" -> "@drawable/nutriscore_a.png"
+            "B" -> "@drawable/nutriscore_b.png"
+            "C" -> "@drawable/nutriscore_c.png"
+            "D" -> "@drawable/nutriscore_d.png"
+            "E" -> "@drawable/nutriscore_e.png"
+            else -> throw InvalidParameterException()
+        }
+    }
 
 }
 
