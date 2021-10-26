@@ -1,6 +1,4 @@
-package com.barrie.androidtest.model
-
-import android.widget.TextView
+package com.barrie.myyuka.model
 
 
 data class Product(val name : String, val brand : String, val barcode: String, val nutriscore : String,

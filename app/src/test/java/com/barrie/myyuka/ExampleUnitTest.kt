@@ -1,4 +1,4 @@
-package com.barrie.androidtest
+package com.barrie.myyuka
 
 import org.junit.Test
 
