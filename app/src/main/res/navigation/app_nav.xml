@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/tab_fiche">
+
+    <fragment
+        android:id="@+id/tab_fiche"
+        android:name="com.barrie.myyuka.ProductDetailsSummaryFragment"
+        android:label="ProductDetailsSummaryFragment" />
+    <fragment
+        android:id="@+id/tab_nutrition"
+        android:name="com.barrie.myyuka.ProductDetailsNutritionFragment"
+        android:label="ProductDetailsNutritionFragment" />
+    <fragment
+        android:id="@+id/tab_tableau"
+        android:name="com.barrie.myyuka.ProductDetailsNutritionalValuesFragment"
+        android:label="ProductDetailsNutritionalValuesFragment" />
+</navigation>

@@ -72,14 +72,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
             android:fontFamily="sans-serif-light"
-            android:text="Nutriscore: A"
-            android:textSize="15sp"
+            android:text="NA"
+            android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@id/nutri_score_icon"
             app:layout_constraintBottom_toBottomOf="@id/nutri_score_icon" />
 
         <ImageView
-            android:id="@+id/colorie_icon"
+            android:id="@+id/calorie_icon"
             android:src="@drawable/ic_calories"
             android:layout_width="16dp"
             android:layout_height="16dp"
@@ -92,10 +93,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
             android:fontFamily="sans-serif-light"
             android:text="Code barres: NO_CODE"
-            android:textSize="15sp"
+            android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="@id/right_margin"
-            app:layout_constraintBottom_toBottomOf="@id/colorie_icon" />
+            app:layout_constraintBottom_toBottomOf="@id/calorie_icon" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
