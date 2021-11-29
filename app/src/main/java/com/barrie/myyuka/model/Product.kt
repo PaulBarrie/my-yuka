@@ -1,5 +1,6 @@
 package com.barrie.myyuka.model
 
+import com.barrie.myyuka.R
 import java.security.InvalidKeyException
 import java.security.InvalidParameterException
 
@@ -7,7 +8,7 @@ import java.security.InvalidParameterException
 data class Product(val name : String, val brand : String, val barcode: String, val nutriscore : String,
                    val url_image : String, val quantity : String, val sale_country : List<String>,
                    val ingredients : List<String>, val allergenics : List<String> = emptyList(),
-                   val additives : List<String> = emptyList(), val kCalPerPart : Int) {
+                   val additives : List<String> = emptyList(), val kCalPerPart : Int, val nutritionFacts: NutritionFacts) {
 
 
     fun getBarcodeContent() : String {
@@ -47,14 +48,15 @@ data class Product(val name : String, val brand : String, val barcode: String, v
     fun getNutriscoreOnList() : String {
         return "Nutriscore: ${this.nutriscore}"
     }
+
     @Throws(InvalidParameterException::class)
-    fun getNutriscoreImage() : String  {
+    fun getNutriscoreImage() : Int  {
         return when (this.nutriscore) {
-            "A" -> "@drawable/nutriscore_a.png"
-            "B" -> "@drawable/nutriscore_b.png"
-            "C" -> "@drawable/nutriscore_c.png"
-            "D" -> "@drawable/nutriscore_d.png"
-            "E" -> "@drawable/nutriscore_e.png"
+            "A" -> R.drawable.nutriscore_a
+            "B" -> R.drawable.nutriscore_b
+            "C" -> R.drawable.nutriscore_c
+            "D" -> R.drawable.nutriscore_d
+            "E" -> R.drawable.nutriscore_e
             else -> throw InvalidParameterException()
         }
     }

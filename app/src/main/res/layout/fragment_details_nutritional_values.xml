@@ -1,17 +1,545 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
-    <FrameLayout
-        android:id="@+id/details_nutri_fragment"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:layout_height="match_parent"
-        tools:ignore="MissingConstraints" />
+    android:gravity="center">
+
+
+<TableRow
+    android:background="#000000"
+    android:layout_width="fill_parent"
+    android:layout_height="0dp"
+    android:layout_margin="1dp"
+    android:layout_weight="1"
+    >
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="DETAILS NUTRITION VALUES"
-        android:textSize="100sp"/>
+        android:text=""
+        android:layout_margin="1dp"
+        android:layout_column="0"
+        android:background="#FFFFFF"
+        android:textStyle="bold"
+        android:gravity="center"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="  Pour 100g  "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="1"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="  Par part   "
+        android:layout_margin="1dp"
+        android:textSize="18sp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:layout_column="2"
+        />
+</TableRow>
+
+<!-- Energy -->
+<TableRow
+    android:background="#000000"
+    android:layout_width="fill_parent"
+    android:layout_height="0dp"
+    android:layout_margin="1dp"
+    android:layout_weight="1"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="  Énergie "
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="0"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/energy100g"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="1"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/energyPP"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:layout_column="2" />
+</TableRow>
+
+
+<!-- Energy -->
+<TableRow
+    android:background="#000000"
+    android:layout_width="fill_parent"
+    android:layout_height="0dp"
+    android:layout_margin="1dp"
+    android:layout_weight="1"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="  Matières grasses "
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="0"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/butterfat100g"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="1"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/butterfatPP"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:layout_column="2" />
+</TableRow>
+
+<!-- Flatty acid -->
+<TableRow
+    android:background="#000000"
+    android:layout_width="fill_parent"
+    android:layout_height="0dp"
+    android:layout_margin="1dp"
+    android:layout_weight="1"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="  dont Acides gras saturés "
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="0"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/fattyacid100g"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="1"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/fattyacidPP"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:layout_column="2" />
+</TableRow>
+
+<!-- Carbohydrates -->
+<TableRow
+    android:background="#000000"
+    android:layout_width="fill_parent"
+    android:layout_height="0dp"
+    android:layout_margin="1dp"
+    android:layout_weight="1"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="  Glucides "
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="0"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/carbohydrates100g"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="1"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/carbohydratesPP"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:layout_column="2" />
+</TableRow>
+
+
+<!-- Sugar -->
+<TableRow
+    android:background="#000000"
+    android:layout_width="fill_parent"
+    android:layout_height="0dp"
+    android:layout_margin="1dp"
+    android:layout_weight="1"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="  dont Sucres "
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="0"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/sugar100g"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="1"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/sugarPP"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:layout_column="2" />
+</TableRow>
+
+
+<!-- Fibres -->
+<TableRow
+    android:background="#000000"
+    android:layout_width="fill_parent"
+    android:layout_height="0dp"
+    android:layout_margin="1dp"
+    android:layout_weight="1"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="  Fibres alimentaires "
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="0"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/fibres100g"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="1"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/fibresPP"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:layout_column="2" />
+</TableRow>
+
+<!-- Proteins -->
+<TableRow
+    android:background="#000000"
+    android:layout_width="fill_parent"
+    android:layout_height="0dp"
+    android:layout_margin="1dp"
+    android:layout_weight="1"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="  Protéines "
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="0"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/proteins100g"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="1"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/proteinsPP"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:layout_column="2" />
+</TableRow>
+
+<!-- Salt -->
+<TableRow
+    android:background="#000000"
+    android:layout_width="fill_parent"
+    android:layout_height="0dp"
+    android:layout_margin="1dp"
+    android:layout_weight="1"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="  Sel "
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="0"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/salt100g"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="1"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/saltPP"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:layout_column="2" />
+</TableRow>
+
+
+<!-- Sodium -->
+<TableRow
+    android:background="#000000"
+    android:layout_width="fill_parent"
+    android:layout_height="0dp"
+    android:layout_margin="1dp"
+    android:layout_weight="1"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="  Sodium"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="0"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+        android:id="@+id/sodium100g"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:layout_column="1"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        />
+
+    <TextView
+        android:id="@+id/sodiumPP"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text=" ? "
+        android:textSize="18sp"
+        android:layout_margin="1dp"
+        android:background="#FFFFFF"
+        android:gravity="center"
+        android:layout_column="2" />
+</TableRow>
+
+</TableLayout>
+
+    <!--
+    <com.barrie.myyuka.TableCellView
+        android:id="@+id/c01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pour 100g"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/c02"
+        android:textSize="18sp"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        app:border="left|bottom" />
+    <com.barrie.myyuka.TableCellView
+        android:id="@+id/c02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Par part"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        app:border="left|bottom" />
+    <com.barrie.myyuka.TableCellView
+        android:id="@+id/c10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Énergie"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/c01"
+        app:layout_constraintEnd_toStartOf="@+id/c01"
+        android:paddingStart="10dp"
+        android:paddingEnd="85dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:border="top|right" />
+
+    <com.barrie.myyuka.TableCellView
+        android:id="@+id/c11"
+        android:layout_width="133dp"
+        android:layout_height="47dp"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        android:paddingBottom="10dp"
+        android:text="?"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:border="bottom|right"
+        app:layout_constraintEnd_toEndOf=""
+        app:layout_constraintStart_toEndOf="@+id/c10"
+        app:layout_constraintTop_toBottomOf="@+id/c01" />
+    <com.barrie.myyuka.TableCellView
+        android:id="@+id/c12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="?"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/c01"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/c11"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:border="bottom|right" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+            -->

@@ -1,30 +1,56 @@
 package com.barrie.myyuka
 
-import android.content.Context
-import android.graphics.Typeface
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.SpannableStringBuilder
-import android.text.style.StyleSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.barrie.myyuka.model.NutritionFacts
+import com.barrie.myyuka.model.NutritionFactsItem
 import com.barrie.myyuka.model.Product
-import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.fragment_details_nutrition.*
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val nutritionFacts = NutritionFacts(
+            NutritionFactsItem("kj", 546f, 293f),
+            NutritionFactsItem("g", 6f, 0.8f),
+            NutritionFactsItem("g", 3f, 0.1f),
+            NutritionFactsItem("g", 24.7f, 8.4f),
+            NutritionFactsItem("g", 18.3f, 5.2f),
+            NutritionFactsItem("g", 18.3f, 5.2f),
+            NutritionFactsItem("g", 15.7f, 4.8f),
+            NutritionFactsItem("g", 2.8f, 0.75f),
+            NutritionFactsItem("g", 1.23f, 0.295f)
+        )
+        val product = Product(
+            "Petits pois et carottes",
+            "Cassegrain",
+            "3083680085304",
+            "B",
+            "https://cdn.mcommerce.franprix.fr/product-images/3083680481991_H1C1_s01",
+            "400 g (280 g net égoutté)",
+            listOf("France", "Japon", "Suisse"),
+            listOf(
+                "Petits pois 66%",
+                "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"
+            ),
+            listOf(),
+            listOf(),
+            35,
+            nutritionFacts
+        )
         super.onCreate(savedInstanceState)
+
         setContentView(R.layout.activity_main)
         supportActionBar?.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.toolbar))
         supportFragmentManager.beginTransaction()
-            .replace(R.id.container_view, DetailsFragment())
+            .replace(R.id.container_view, DetailsFragment(product))
             .commitAllowingStateLoss()
         /*
         supportFragmentManager.beginTransaction()
@@ -38,10 +64,7 @@ class MainActivity : AppCompatActivity() {
                 commitAllowingStateLoss()
             } */
         /*
-        val product = Product("Petits pois et carottes", "Cassegrain", "3083680085304",
-            "E", "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&dl=joseph-gonzalez-fdlZBWIP0aM-unsplash.jpg",
-            "400 g (280 g net égoutté)", listOf("France", "Japon", "Suisse"), listOf("Petits pois 66%",
-                "eau", "garniture 2,8% (salade, oignon grelot)", "sucre", "sel", "arôme naturel"), listOf(), listOf(),35)
+
         //setProductContent(product)
         val products = listOf(product, product, product, product, product, product, product)
         recyclerview.layoutManager = GridLayoutManager(this, 1)
@@ -58,43 +81,9 @@ class MainActivity : AppCompatActivity() {
          */
 
     }
-    fun setProductContent(product: Product)  {
-        //Image
-        val productImageView = findViewById<ImageView>(R.id.product_image)
-        Picasso.get().load(product.url_image).into(productImageView)
-        //Name
-        val name = findViewById<TextView>(R.id.name)
-        name.text = product.name
-        //Brand
-        val brand = findViewById<TextView>(R.id.brand)
-        brand.text = product.brand
-        //Nutriscore
-        val nutriscoreView = findViewById<ImageView>(R.id.nutri_score)
-        val context: Context = nutriscoreView.context
-        val imageResource = context.resources.getIdentifier(product.getNutriscoreImage(),
-            "drawable", context.packageName)
-        nutriscoreView.setImageResource(imageResource)
-        //Barcode
-        val barcode = findViewById<TextView>(R.id.barcode)
-        barcode.setBoldText(product.getBarcodeContent())
-        //Quantity
-        val quantity = findViewById<TextView>(R.id.quantity)
-        quantity.setBoldText(product.getQuantityContent())
-        //Sale country
-        val sale_country = findViewById<TextView>(R.id.sale_country)
-        sale_country.setBoldText(product.getSaleCountriesContent())
-        //Ingredients
-        val ingredients = findViewById<TextView>(R.id.ingredients)
-        ingredients.setBoldText(product.getIngredientsContent())
-        //Allergenics
-        val allergenics = findViewById<TextView>(R.id.allergenics)
-        allergenics.setBoldText(product.getAllergenicsContent())
-        //Additives
-        val additives = findViewById<TextView>(R.id.additives)
-        additives.setBoldText(product.getAdditivesContent())
-    }
 
 }
+
 
 class ListAdapter(val product: List<Product>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -104,6 +93,7 @@ class ListAdapter(val product: List<Product>) : RecyclerView.Adapter<RecyclerVie
                 .inflate(R.layout.list_cell, parent, false)
         )
     }
+
     override fun onBindViewHolder(
         holder: RecyclerView.ViewHolder,
         position: Int
@@ -134,9 +124,5 @@ class ListItemViewHolder(v: View) : RecyclerView.ViewHolder(v) {
 
 }
 
-fun TextView.setBoldText(text: String, separator: String = ":") {
-    val spannable = SpannableStringBuilder(text)
-    spannable.setSpan(StyleSpan(Typeface.BOLD), 0, text.indexOf(separator) + 1, 0)
-    this.text = spannable
-}
+
 

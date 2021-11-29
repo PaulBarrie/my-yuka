@@ -2,16 +2,248 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <FrameLayout
         android:id="@+id/nutri_fragment"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="match_parent"
         tools:ignore="MissingConstraints" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/left_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/right_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_margin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.05"
+        />
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="DETAILS NUTRITION"
-        android:textSize="100sp"/>
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Repères nutritionnels pour 100g"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:paddingBottom="30dp"
+        app:layout_constraintStart_toEndOf="@id/left_margin"
+        app:layout_constraintTop_toBottomOf="@id/top_margin"
+        />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/butterfat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        app:layout_constraintStart_toEndOf="@id/left_margin"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        >
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/buterfat_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/butterfat_circle"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+
+        <TextView
+            android:id="@+id/butterfat_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:paddingStart="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/buterfat_guideline"
+            app:layout_constraintStart_toEndOf="@+id/butterfat_circle"
+            android:text="-g de Matières grasses / Lipides" />
+
+        <TextView
+            android:id="@+id/butterfat_level"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/buterfat_guideline"
+            app:layout_constraintStart_toEndOf="@+id/butterfat_circle"
+            android:text="en - quantité"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- SATURATED FATTY ACID -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fattyacid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        app:layout_constraintStart_toEndOf="@id/left_margin"
+        app:layout_constraintTop_toBottomOf="@id/butterfat"
+        >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fattyacid_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/fatty_acid_circle"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/fatty_acid_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:paddingStart="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/fattyacid_guideline"
+            app:layout_constraintStart_toEndOf="@+id/fatty_acid_circle"
+            android:text="-g d'acides gras saturés" />
+
+        <TextView
+            android:id="@+id/fatty_acid_level"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/fattyacid_guideline"
+            app:layout_constraintStart_toEndOf="@+id/fatty_acid_circle"
+            android:text="en - quantité"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- SUGAR -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/sugar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        app:layout_constraintStart_toEndOf="@id/left_margin"
+        app:layout_constraintTop_toBottomOf="@id/fattyacid"
+        >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/sugar_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/sugar_circle"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/sugar_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:paddingStart="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/sugar_guideline"
+            app:layout_constraintStart_toEndOf="@+id/sugar_circle"
+            android:text="-g de sucres" />
+
+        <TextView
+            android:id="@+id/sugar_level"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:paddingStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/sugar_guideline"
+            app:layout_constraintStart_toEndOf="@+id/sugar_circle"
+            android:text="en quantité -"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- SALT -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/salt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/left_margin"
+        app:layout_constraintTop_toBottomOf="@id/sugar"
+        >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/salt_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <ImageView
+            android:id="@+id/salt_circle"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/salt_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/salt_guideline"
+            app:layout_constraintStart_toEndOf="@+id/salt_circle"
+            android:text="-g de sucres" />
+
+        <TextView
+            android:id="@+id/salt_level"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:textSize="14sp"
+            android:paddingStart="10dp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/salt_guideline"
+            app:layout_constraintStart_toEndOf="@+id/salt_circle"
+            android:text="en quantité -"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
